@@ -1,3 +1,3 @@
 # YOSO
-## You only shop once.
+You only shop once.
 
