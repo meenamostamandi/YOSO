@@ -1,0 +1,58 @@
+.tabs {
+	height: 100%;
+}
+
+.tabs input {
+		opacity: 0;
+		display: none;
+}
+
+.glyphicon {
+		float: right;
+}
+
+label {
+		margin: 0;
+		padding: 5% 2%;
+		border: 0;
+		display: block;
+
+		/* Firefox */
+    -moz-transition: all 0.1s ease-out;
+    /* WebKit */
+    -webkit-transition: all 0.1s ease-out;
+    /* Opera */
+    -o-transition: all 0.1s ease-out;
+    /* Standard */
+    transition: all 0.1s ease-out;
+}
+
+input:checked + label {
+    background: #5cb85c;
+    z-index: 6;
+
+		/* Firefox */
+    -moz-transition: all 0.2s ease-in;
+    /* WebKit */
+    -webkit-transition: all 0.2s ease-in;
+    /* Opera */
+    -o-transition: all 0.2s ease-in;
+    /* Standard */
+    transition: all 0.2s ease-in;
+}
+
+.content-1, .content-2, .content-3, .content-4 {
+		opacity: 0;
+		display: none;}
+
+.tabs input.tab-selector-1:checked ~ .content .content-1,
+.tabs input.tab-selector-2:checked ~ .content .content-2,
+.tabs input.tab-selector-3:checked ~ .content .content-3,
+.tabs input.tab-selector-4:checked ~ .content .content-4 {
+		opacity: 1;
+		display: inline-block;
+}
+
+#menu:checked ~ .tabs {
+		display: inline;
+}
