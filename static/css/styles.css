@@ -72,3 +72,11 @@ li .glyphicon {
 		background-color: black;
 		color: white;
 }*/
+
+.add {
+		padding: 6% 5%;
+		background-color: #eeeeee;
+		color: #5cb85c;
+		font-size: 24px;
+		text-align: center;
+}
