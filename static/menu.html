@@ -8,7 +8,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/styles-old.css" rel="stylesheet">
+		<link href="css/styles.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -18,16 +18,35 @@
   </head>
   <body>
    	
-		<header>
-			<h1>Menu</h1>
-			<a href="home.html">back</a>
+		<header class="row container">
+			<a href="home.html" class="left-nav col-xs-2">
+				<span class="glyphicon glyphicon-align-justify"></span>
+			</a>
+			<h1 class="col-xs-8">Menu</h1>
+			<a href="home.html" class="right-nav col-xs-2">
+				<span class="glyphicon glyphicon-plus"></span>
+			</a>
 		</header>
 
 		<ul>
-			<li><a href="home.html">Home</a></li>
-			<li><a href="lists.html">Lists</a></li>
-			<li><a href="friends.html">Friends</a></li>
-			<li><a href="contact.html">Contact us</a></li>
+			<li class="row">
+				<a href="lists.html">
+					<text class="col-xs-10">Lists</text>
+					<span class="glyphicon glyphicon-list-alt col-xs-2"></span>
+				</a>		
+			</li>
+			<li class="row">
+				<a href="friends.html">
+					<text class="col-xs-10">Friends</text>
+					<span class="glyphicon glyphicon-user col-xs-2"></span>
+				</a>		
+			</li>
+			<li class="row">
+				<a href="contact.html">
+					<text class="col-xs-10">Contact Us</text>
+					<span class="glyphicon glyphicon-send col-xs-2"></span>
+				</a>		
+			</li>
 		</ul>
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
