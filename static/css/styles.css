@@ -39,36 +39,36 @@ a {
 		color: #5cb85c;
 }
 
-li .info {
-		color: #7dc67d;
+.info {
+		//color: #7dc67d;
 		font-style:italic;
 		font-size: 16px;
 		text-align: right;
 		top: 8px;		
 }
 
-li:hover {
+/*li:hover {
 		background-color: #7dc67d;
 }
 
 li:hover text {
 		color: white;
-}
+}*/
 
 li .glyphicon {
 		top: 4px;
 }
 
-li:hover .glyphicon {
+/*li:hover .glyphicon {
 		color: white;
-}
+}*/
 
-.checked, .checked > *{
+.checked, .checked * {
 		background-color: black;
 		color: white;
 }
 
-.checked:hover {
+/*.checked:hover {
 		background-color: black;
 		color: white;
-}
+}*/
