@@ -23,6 +23,10 @@ header h1{
 		text-align: right;		
 }
 
+header a:hover {
+		color: #7dc67d;
+}
+
 ul {
 		list-style-type:none;
 		font-size: 24px;
@@ -43,4 +47,12 @@ li:hover a {
 
 a {
 		color: #5cb85c;
+}
+
+li .info {
+		color: #bee3be;
+		font-style:italic;
+		font-size: 16px;
+		text-align: right;
+		top: 8px;		
 }
