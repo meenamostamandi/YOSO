@@ -36,23 +36,23 @@ ul {
 li {
 		padding: 6% 5%;
 }
-
-li:hover {
-		background-color: #7dc67d;
-}
-
-li:hover a {
-		color: white;
-}
-
 a {
 		color: #5cb85c;
 }
 
 li .info {
-		color: #bee3be;
+		color: #7dc67d;
 		font-style:italic;
 		font-size: 16px;
 		text-align: right;
 		top: 8px;		
 }
+
+li:hover {
+		background-color: #7dc67d;
+}
+
+li:hover text {
+		color: white;
+}
+
