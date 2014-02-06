@@ -1,9 +1,7 @@
 header {
 		color: white;
 		background-color: #5cb85c;
-		padding: 1%;
 		font-size: 24px;
-		height: 100%;
 }
 
 header h1{
@@ -14,13 +12,13 @@ header h1{
 .left-nav {
 		color: white;
 		top: 24px;
-		text-align: left;
+		//text-align: left;
 }
 
 .right-nav{
 		color: white;
 		top: 24px;
-		text-align: right;		
+		//text-align: right;		
 }
 
 header a:hover {
@@ -34,8 +32,9 @@ ul {
 }
 
 li {
-		padding: 6% 5%;
+	padding: 6% 5%;
 }
+
 a {
 		color: #5cb85c;
 }
