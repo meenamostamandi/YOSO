@@ -56,3 +56,20 @@ li:hover text {
 		color: white;
 }
 
+li .glyphicon {
+		top: 4px;
+}
+
+li:hover .glyphicon {
+		color: white;
+}
+
+.checked, .checked > *{
+		background-color: black;
+		color: white;
+}
+
+.checked:hover {
+		background-color: black;
+		color: white;
+}
