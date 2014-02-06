@@ -14,14 +14,12 @@ header h1{
 .left-nav {
 		color: white;
 		top: 24px;
-		//padding-left: 10%;
 		text-align: left;
 }
 
 .right-nav{
 		color: white;
 		top: 24px;
-		//padding-right: 10%;
 		text-align: right;		
 }
 
@@ -33,6 +31,14 @@ ul {
 
 li {
 		padding: 6% 5%;
+}
+
+li:hover {
+		background-color: #7dc67d;
+}
+
+li:hover a {
+		color: white;
 }
 
 a {
