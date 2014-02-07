@@ -4,6 +4,6 @@ function login() {
 }
 
 function signup() {
-  window.self.location.href = 'signup.html';
+  window.self.location.href = 'index.html';
   return true;
 }
