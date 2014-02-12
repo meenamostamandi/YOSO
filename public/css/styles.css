@@ -9,7 +9,7 @@ body {
 
 .menu {
 		color: white;
-		background-color: rgba(92, 184, 92, 0.9);//#5cb85c;
+		background-color: rgba(92, 184, 92, 1);//#5cb85c;
 		font-size: 20px;
 
 		position: fixed;
@@ -21,9 +21,9 @@ body {
 		width: 100%;
 		margin: 0;
 
-		-webkit-box-shadow: 0 8px 6px -6px #cccccc;
+		/*-webkit-box-shadow: 0 8px 6px -6px #cccccc;
 	     -moz-box-shadow: 0 8px 6px -6px #cccccc;
-	          box-shadow: 0 8px 6px -6px #cccccc;
+	          box-shadow: 0 8px 6px -6px #cccccc;*/
 }
 
 .menu .title {
@@ -46,7 +46,7 @@ body {
 
 .list-all {
 		list-style-type: none;
-		font-size: 24px;
+		font-size: 20px;
 		padding: 0;
 		
 		width: 100%;
@@ -70,16 +70,16 @@ body {
 
 .list-obj {
 		padding: 6% 5%;
-		//border-bottom: 1px dotted #cccccc;
+		border-bottom: 1px dotted #cccccc;
 }
 
-.list-obj:nth-child(even) {
+/*.list-obj:nth-child(even) {
 		background-color: #DEF1DE;
 }
 
 .list-obj:nth-child(odd) {
 		background-color: #EFF8EF;
-}
+}*/
 
 .list-obj:first-child {
 		//border-top: 1px dotted #cccccc;
@@ -142,7 +142,7 @@ body {
 		padding: 0;
 }
 
-.tab-icon:hover {
+.selected {
 		background-color: #5cb85c;
 		color: white;
 }

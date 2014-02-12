@@ -34,6 +34,8 @@
 			<li class="list-obj row container" id="{{name}}">
 				<a href="lists.html" class="list-el">
 					<text class="col-xs-10">{{name}}</text>
+					<text class="col-xs-10">{{description}}</text>
+					<text class="col-xs-10">{{members}}</text>
 				</a>		
 			</li>
 			{{/each}}
@@ -42,34 +44,47 @@
 		{{#each lists}}
 		<ul class="list-area list-individual" id="{{name}}-contents">
 			{{#each contents}}
-			<li class="list-obj row container">
-				<a href="lists.html" class="list-el">
-					<text class="col-xs-10">{{name}}</text>
-					<text class="col-xs-10">{{quantity}}</text>
-					<text class="col-xs-10">{{complete}}</text>
-				</a>		
+			<li class="list-obj row container todo">
+				<a href="#">
+					<text class="col-xs-6">{{name}}</text>
+					<text class="info col-xs-4">{{quantity}}</text>
+					<span class="glyphicon glyphicon-unchecked col-xs-2"></span>
+				</a>
 			</li>
 			{{/each}}
 		</ul>
 		{{/each}}
 	</div>
-	
+
+	<div class="tab" id="friends-tab">
+		<h1>friends tab</h1>
+	</div>
+
+	<div class="tab" id="checkin-tab">
+		<h1>checkin tab</h1>
+	</div>
+
+	<div class="tab" id="trending-tab">
+		<h1>trending tab</h1>
+	</div>
+
 	<div class="bottom-offset"></div>
+	</div>
 
 	<footer class="tabs row">
-		<div class="tab-icon col-xs-3">
+		<div class="tab-icon col-xs-3 selected" id="lists-icon">
 			<span class="glyphicon glyphicon-list-alt"></span>
 			<div class="tab-icon-name">lists</div>
 		</div>
-		<div class="tab-icon col-xs-3">
+		<div class="tab-icon col-xs-3" id="friends-icon">
 			<span class="glyphicon glyphicon-user"></span>
 			<div class="tab-icon-name">friends</div>
 		</div>
-		<div class="tab-icon col-xs-3">
+		<div class="tab-icon col-xs-3" id="checkin-icon">
 			<span class="glyphicon glyphicon-map-marker"></span>
 			<div class="tab-icon-name">check in</div>
 		</div>
-		<div class="tab-icon col-xs-3">
+		<div class="tab-icon col-xs-3" id="trending-icon">
 			<span class="glyphicon glyphicon-heart"></span>
 			<div class="tab-icon-name">trending</div>
 		</div>
