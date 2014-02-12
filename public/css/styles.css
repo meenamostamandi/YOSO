@@ -1,11 +1,11 @@
-@font-face {
+/*@font-face {
   font-family: 'Antonio';
   src: url('../fonts/ostrich-sans/ostrich-rounded.ttf');
 }
 
 body {	
 		font-family: "Antonio";
-}
+}*/
 
 .menu {
 		color: white;
@@ -30,7 +30,6 @@ body {
 		display: inline;
 		text-align: center;
 		font-size: 24px;
-		font-family: "Antonio";
 		padding: 5% 0;
 		margin: 0;
 }
@@ -45,9 +44,20 @@ body {
 		top: 15px;
 }
 
-.list-area {
-		list-style-type:none;
+.list-all {
+		list-style-type: none;
 		font-size: 24px;
+		padding: 0;
+		
+		width: 100%;
+		margin: 0;
+
+		overflow-x: hidden;
+}
+
+.list-individual {
+		list-style-type: none;
+		font-size: 20px;
 		padding: 0;
 		
 		width: 100%;

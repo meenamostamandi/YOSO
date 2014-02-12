@@ -28,38 +28,29 @@
 
 	<div class="top-offset"></div>
 
-	<ul class="list-area">
+	<ul class="list-area list-all" id="lists">
+		{{#each lists}}
 		<li class="list-obj row container">
 			<a href="lists.html" class="list-el">
-				<text class="col-xs-10">lists</text>
+				<text class="col-xs-10">{{name}}</text>
 			</a>		
 		</li>
-		<li class="list-obj row container">
-			<a href="friends.html" class="list-el">
-				<text class="col-xs-10">friends</text>
-			</a>		
-		</li>
-		<li class="list-obj row container">
-			<a href="checkin.html" class="list-el">
-				<text class="col-xs-10">check in</text>
-			</a>		
-		</li>
-		<li class="list-obj row container">
-			<a href="trending.html" class="list-el">
-				<text class="col-xs-10">trending</text>
-			</a>		
-		</li>
-		<li class="list-obj row container">
-			<a href="contact.html" class="list-el">
-				<text class="col-xs-10">contact</text>
-			</a>		
-		</li>
-		<li class="list-obj row container">
-			<a href="login.html" class="list-el">
-				<text class="col-xs-10">sign out</text>
-			</a>		
-		</li>
+		{{/each}}
 	</ul>
+
+	{{#each lists}}
+	<ul class="list-area list-individual" id="{{name}}">
+		{{#each contents}}
+		<li class="list-obj row container">
+			<a href="lists.html" class="list-el">
+				<text class="col-xs-10">{{name}}</text>
+				<text class="col-xs-10">{{quantity}}</text>
+				<text class="col-xs-10">{{complete}}</text>
+			</a>		
+		</li>
+		{{/each}}
+	</ul>
+	{{/each}}
 	
 	<div class="bottom-offset"></div>
 
@@ -83,6 +74,6 @@
 	</footer>
 
   <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.js"></script>
 </body>
 </html>
