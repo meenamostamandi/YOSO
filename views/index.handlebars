@@ -28,29 +28,31 @@
 
 	<div class="top-offset"></div>
 
-	<ul class="list-area list-all" id="lists">
-		{{#each lists}}
-		<li class="list-obj row container">
-			<a href="lists.html" class="list-el">
-				<text class="col-xs-10">{{name}}</text>
-			</a>		
-		</li>
-		{{/each}}
-	</ul>
+	<div class="tab" id="lists-tab">
+		<ul class="list-area list-all" id="lists">
+			{{#each lists}}
+			<li class="list-obj row container" id="{{name}}">
+				<a href="lists.html" class="list-el">
+					<text class="col-xs-10">{{name}}</text>
+				</a>		
+			</li>
+			{{/each}}
+		</ul>
 
-	{{#each lists}}
-	<ul class="list-area list-individual" id="{{name}}">
-		{{#each contents}}
-		<li class="list-obj row container">
-			<a href="lists.html" class="list-el">
-				<text class="col-xs-10">{{name}}</text>
-				<text class="col-xs-10">{{quantity}}</text>
-				<text class="col-xs-10">{{complete}}</text>
-			</a>		
-		</li>
+		{{#each lists}}
+		<ul class="list-area list-individual" id="{{name}}-contents">
+			{{#each contents}}
+			<li class="list-obj row container">
+				<a href="lists.html" class="list-el">
+					<text class="col-xs-10">{{name}}</text>
+					<text class="col-xs-10">{{quantity}}</text>
+					<text class="col-xs-10">{{complete}}</text>
+				</a>		
+			</li>
+			{{/each}}
+		</ul>
 		{{/each}}
-	</ul>
-	{{/each}}
+	</div>
 	
 	<div class="bottom-offset"></div>
 
@@ -75,5 +77,6 @@
 
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="js/bootstrap.js"></script>
+  <script src="js/custom.js"></script>
 </body>
 </html>
