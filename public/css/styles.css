@@ -1,0 +1,164 @@
+@font-face {
+  font-family: 'Antonio';
+  src: url('../fonts/ostrich-sans/ostrich-rounded.ttf');
+}
+
+body {	
+		font-family: "Antonio";
+}
+
+.menu {
+		color: white;
+		background-color: rgba(92, 184, 92, 0.9);//#5cb85c;
+		font-size: 20px;
+
+		position: fixed;
+    z-index: 100; 
+    top: 0; 
+    left: 0;
+		right: 0;
+	
+		width: 100%;
+		margin: 0;
+
+		-webkit-box-shadow: 0 8px 6px -6px #cccccc;
+	     -moz-box-shadow: 0 8px 6px -6px #cccccc;
+	          box-shadow: 0 8px 6px -6px #cccccc;
+}
+
+.menu .title {
+		display: inline;
+		text-align: center;
+		font-size: 24px;
+		font-family: "Antonio";
+		padding: 5% 0;
+		margin: 0;
+}
+
+.left-nav {
+		color: white;
+		top: 15px;
+}
+
+.right-nav{
+		color: white;
+		top: 15px;
+}
+
+.list-area {
+		list-style-type:none;
+		font-size: 24px;
+		padding: 0;
+		
+		width: 100%;
+		margin: 0;
+
+		overflow-x: hidden;
+}
+
+.list-obj {
+		padding: 6% 5%;
+		//border-bottom: 1px dotted #cccccc;
+}
+
+.list-obj:nth-child(even) {
+		background-color: #DEF1DE;
+}
+
+.list-obj:nth-child(odd) {
+		background-color: #EFF8EF;
+}
+
+.list-obj:first-child {
+		//border-top: 1px dotted #cccccc;
+}
+
+
+
+.list-name .glyphicon {
+		top: 50%;
+}
+
+.list-el {
+		color: #5cb85c;
+}
+
+.info {
+		//color: #7dc67d;
+		font-style:italic;
+		font-size: 16px;
+		text-align: right;
+		top: 8px;		
+}
+
+.checked, .checked * {
+		background-color: black;
+		color: white;
+}
+
+.add {
+		padding: 6% 5%;
+		background-color: #eeeeee;
+		color: #5cb85c;
+		font-size: 24px;
+		text-align: center;
+}
+
+.tabs {
+		border-top: 1px solid #cccccc;
+		color: #5cb85c;
+		background-color: rgba(255, 255, 255, 0.8);//white;
+		font-size: 24px;
+
+		position: fixed;
+    z-index: 100; 
+    bottom: 0; 
+    left: 0;
+		right: 0;
+	
+		width: 100%;
+		margin: 0;
+}
+
+.tab-icon {
+		padding: 2% 0 1% 0;
+}
+
+.tab-icon .glyphicon {
+		display: block;
+		margin: auto;
+		padding: 0;
+}
+
+.tab-icon:hover {
+		background-color: #5cb85c;
+		color: white;
+}
+
+.tab-icon-name {		
+		font-size: 10px;
+		width: 100%;
+		padding: 0 0 0 0;
+		margin: 0 0 0 0;
+		text-align: center;
+}
+
+.top-offset {
+		padding: 0;
+		margin: 0;
+		height: 100px;
+}
+
+.bottom-offset {
+		padding: 0;
+		margin: 0;
+		height: 100px;
+}
+
+/*.tabs {
+    -webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+    -moz-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+    box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+    font: bold 18px/1.2em sans-serif;
+    text-align: center;
+}*/
