@@ -21,6 +21,12 @@ function initializePage() {
 	$(".tab").hide();
 	$("#lists-tab").show();
 	$(".tab-icon").click(changeTab);
+
+	$(".right-nav").click(showForm);
+}
+
+function showForm(e) {
+  $('#myModal').modal('toggle');
 }
 
 function displayList(e) {

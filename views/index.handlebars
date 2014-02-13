@@ -24,6 +24,9 @@
 			<span class="glyphicon glyphicon-chevron-left"></span>
 		</a>
 		<h1 class="title col-xs-8">yoso</h1>
+		<a href="#" class="right-nav col-xs-2">
+			<span class="glyphicon glyphicon-plus"></span>
+		</a>
 	</header>
 
 	<div class="top-offset"></div>
@@ -69,6 +72,26 @@
 	</div>
 
 	<div class="bottom-offset"></div>
+	</div>
+
+	<div class="modal fade bs-modal-sm" tabindex="-1" role="dialog"
+	aria-labelledby="mySmallModalLabel" aria-hidden="true" id="myModal">
+  	<div class="modal-dialog modal-sm">
+    	<div class="modal-content">
+				<form id="addListForm" role="form" method="get" action="/addList">
+     	 		<label for="description">Name:</label>
+	     		<input type="text" class="form-control" id="name" placeholder="name" name="name">
+
+      		<label for="description">Description:</label>
+	     		<input type="text" class="form-control" id="description" placeholder="Description" name="description">
+
+      		<label for="description">Members:</label>
+	     		<input type="text" class="form-control" id="members" placeholder="members" name="members">
+
+					<input type="submit" id="submitBtn" class="btn btn-default" value="Add the list"></input>
+				</form>
+    	</div>
+  	</div>
 	</div>
 
 	<footer class="tabs row">
