@@ -23,5 +23,5 @@ exports.addList = function(req, res){
 	data["lists"].push(newList);
 
 	console.log(data);
-	res.render('index', data);
+	res.redirect('/');//render('index', data);
 };
