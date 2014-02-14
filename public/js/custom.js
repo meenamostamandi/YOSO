@@ -9,6 +9,7 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 var currentTab = "lists";
+var mode = "all";
 
 function initializePage() {
 	console.log("Javascript connected!");
@@ -27,15 +28,20 @@ function initializePage() {
 }
 
 function showDelete(e) {
-	console.log("moose");
 	$(".delete-button").toggle();
 }
 
 function showForm(e) {
-  $('#myModal').modal('toggle');
+	if (mode == "all") {
+ 		$('#myModal').modal('toggle');
+	}
+	else {
+		$('#itemModal').modal('toggle');
+	}	
 }
 
 function displayList(e) {
+	mode = "individual";
 	e.preventDefault();
 	console.log($(this).attr("id"));
 	console.log($(this).attr("id") + "-contents");
@@ -52,6 +58,7 @@ function displayFriend(e) {
 }
 
 function displayAll(e) {
+	mode = "all";
 	e.preventDefault();
 	$(".list-area").hide();
 	$(".list-all").show();
