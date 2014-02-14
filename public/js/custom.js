@@ -37,6 +37,14 @@ function displayList(e) {
 	$("#" + String($(this).attr("id")) + "-contents").show();
 }
 
+function displayFriend(e) {
+	e.preventDefault();
+	console.log($(this).attr("id"));
+	console.log($(this).attr("id") + "-contents");
+	$(".list-area").hide();
+	$("#" + String($(this).attr("id")) + "-contents").show();
+}
+
 function displayAll(e) {
 	e.preventDefault();
 	$(".list-area").hide();
