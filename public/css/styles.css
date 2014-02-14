@@ -7,6 +7,10 @@ body {
 		font-family: "Antonio";
 }*/
 
+.delete-button {
+		display: none;
+}
+
 .menu {
 		color: white;
 		background-color: rgba(92, 184, 92, 1);//#5cb85c;

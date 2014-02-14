@@ -23,6 +23,12 @@ function initializePage() {
 	$(".tab-icon").click(changeTab);
 
 	$(".right-nav").click(showForm);
+	$(".edit").click(showDelete);
+}
+
+function showDelete(e) {
+	console.log("moose");
+	$(".delete-button").toggle();
 }
 
 function showForm(e) {
