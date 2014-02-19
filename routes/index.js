@@ -21,4 +21,17 @@ exports.deleteList = function(req, res){
 	var list = req.params.name;
 	data["lists"] = data["lists"].filter(function(o){return o.name != list});
 	res.redirect('/');
-}
+};
+
+exports.addItem = function(req, res){
+	name = req.query.name;
+	quantity = req.query.quantity;
+	newItem = {
+								"name": name,
+								"quantity": quantity,
+								"complete": false
+						};
+	for(i = 0; i < data["lists"].length; i++) {
+		data["lists"][i]["contents"][name].push();
+	}
+};

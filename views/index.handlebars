@@ -38,8 +38,8 @@
 			<li class="list-obj row container" id="{{name}}">
 				<a href="lists.html" class="list-el">
 					<text class="col-xs-10">{{name}}</text>
-					<text class="col-xs-10">{{description}}</text>
-					<text class="col-xs-10">{{members}}</text>
+					<text class="description col-xs-10">{{description}}</text>
+					<text class="members col-xs-10">{{members}}</text>
 				</a>
 			</li>
 			<li>
@@ -47,35 +47,6 @@
 			</li>
 			{{/each}}
 		</ul>
-
-		{{#each lists}}
-		<ul class="list-area list-individual" id="{{name}}-contents">
-			{{#each contents}}
-			<li class="list-obj row container todo">
-				<a href="#">
-					<text class="col-xs-6">{{name}}</text>
-					<text class="info col-xs-4">{{quantity}}</text>
-					<span class="glyphicon glyphicon-unchecked col-xs-2"></span>
-				</a>
-			</li>
-			{{/each}}
-		</ul>
-		{{/each}}
-	</div>
-
-	<div class="tab" id="friends-tab">
-		<h1>friends tab</h1>
-	</div>
-
-	<div class="tab" id="checkin-tab">
-		<h1>checkin tab</h1>
-	</div>
-
-	<div class="tab" id="trending-tab">
-		<h1>trending tab</h1>
-	</div>
-
-	<div class="bottom-offset"></div>
 	</div>
 
 	<div class="modal fade bs-modal-sm" tabindex="-1" role="dialog"
@@ -108,6 +79,7 @@
 
       		<label for="quantity">Quantity:</label>
 	     		<input type="text" class="form-control" id="quantity" placeholder="quantity" name="quantity">
+					<input type="submit" id="submitBtn" class="btn btn-default" value="Add the item"></input>
 				</form>
     	</div>
   	</div>
@@ -134,6 +106,7 @@
 
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="http://cloud.github.com/downloads/wycats/handlebars.js/handlebars-1.0.rc.1.min.js"></script>
   <script src="js/custom.js"></script>
 </body>
 </html>

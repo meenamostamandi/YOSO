@@ -9,62 +9,75 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 var currentTab = "lists";
-var mode = "all";
 
 function initializePage() {
 	console.log("Javascript connected!");
 	$(".list-all .list-obj").click(displayList);
-	$(".left-nav").click(displayAll);
-
-	$(".todo").click(toggleCheck);
-	$(".checked").click(toggleCheck);
-
-	$(".tab").hide();
-	$("#lists-tab").show();
-	$(".tab-icon").click(changeTab);
-
-	$(".right-nav").click(showForm);
-	$(".edit").click(showDelete);
-}
-
-function showDelete(e) {
-	$(".delete-button").toggle();
-}
-
-function showForm(e) {
-	if (mode == "all") {
- 		$('#myModal').modal('toggle');
-	}
-	else {
-		$('#itemModal').modal('toggle');
-	}	
-}
-
-function displayList(e) {
-	mode = "individual";
-	e.preventDefault();
-	console.log($(this).attr("id"));
-	console.log($(this).attr("id") + "-contents");
-	$(".list-area").hide();
-	$("#" + String($(this).attr("id")) + "-contents").show();
-}
-
-function displayFriend(e) {
-	e.preventDefault();
-	console.log($(this).attr("id"));
-	console.log($(this).attr("id") + "-contents");
-	$(".list-area").hide();
-	$("#" + String($(this).attr("id")) + "-contents").show();
 }
 
 function displayAll(e) {
-	mode = "all";
+	//console.log("displayAll");
 	e.preventDefault();
-	$(".list-area").hide();
-	$(".list-all").show();
+	
+	var getURL = "/list/all";
+	$.get(getURL, displayAllCallback);
+}
+
+function displayAllCallback(result) {
+	//console.log("displayAllCallback");
+	var allHTML = '<ul class="list-area list-all" id="lists"> \
+								 	{{#each lists}} \
+										<li class="list-obj row container" id="{{name}}"> \
+											<a href="lists.html" class="list-el"> \
+												<text class="col-xs-10">{{name}}</text> \
+												<text class="description col-xs-10">{{description}}</text> \
+												<text class="members col-xs-10">{{members}}</text> \
+											</a> \
+										</li> \
+										<li> \
+											<a href="/deleteList/{{name}}" class="delete-button"><span class="glyphicon glyphicon-minus"></span></a> \
+										</li> \
+									{{/each}} \
+								</ul>'
+	var template = Handlebars.compile(allHTML);
+	var html = template(result);
+
+	$('.tab').html(html);
+	$(".list-all .list-obj").click(displayList);
+}
+
+function displayList(e) {
+	e.preventDefault();
+
+	var getURL = "/list/contents/" + $(this).attr("id");
+	$.get(getURL, displayListCallback);
+}
+
+function displayListCallback(result) {
+	var itemHTML = '<li class="list-obj row container todo"> \
+									  <a href="#"> \
+									    <text class="col-xs-6">{{name}}</text> \
+									    <text class="quantity col-xs-4">{{quantity}}</text> \
+									    <span class="glyphicon glyphicon-unchecked col-xs-2"></span> \
+								   	</a> \
+								  </li>'
+
+	var template = Handlebars.compile(itemHTML);
+	var html = '<ul class="list-area list-all" id="lists">';
+	for (var item in result) {
+		var obj = result[item];
+		html += template(obj);
+	}
+	html += "	</ul>"
+
+	$('.tab').html(html);
+	$(".todo").click(toggleCheck);
+	$(".checked").click(toggleCheck);
+	$(".left-nav").click(displayAll);
 }
 
 function toggleCheck(e) {
+	e.preventDefault();
 	if ($(this).is(".todo")) {
 		$(this).removeClass("todo").addClass("checked");
 		$(this).find(".glyphicon-unchecked").removeClass("glyphicon-unchecked").addClass("glyphicon-ok");
@@ -75,19 +88,4 @@ function toggleCheck(e) {
 	}
 }
 
-function changeTab(e) {
-	var nextTab = $(this).attr("id");
-	nextTab = nextTab.substring(0, nextTab.length - 5);
-	console.log(currentTab + ", " + nextTab);
-	if (nextTab != currentTab) {
-		console.log("changing tabs");
 
-		$("#" + currentTab + "-icon").removeClass("selected");
-		$("#" + nextTab + "-icon").addClass("selected");
-
-		$("#" + currentTab + "-tab").hide();
-		$("#" + nextTab + "-tab").show();
-
-		currentTab = nextTab;
-	}
-}

@@ -1,99 +1,88 @@
 {
-	"lists": [
-		{
+	"friends": {
+		"Albert Ke": {},
+		"Brett Parsekian": {}
+	},
+	"lists": {
+		"Groceries": {
 			"name": "Groceries",
 			"description": "Nom nom nom",
-			"contents": [
-				{
+			"contents": {
+				"natto": {
 					"name": "natto",
 					"quantity": 3,
 					"complete": false
 				},
-				{
+				"cleaver": {
 					"name": "cleaver",
 					"quantity": 1,
 					"complete": false
 				},
-				{
+				"apples": {
 					"name": "apples",
 					"quantity": 5,
 					"complete": false
 				},
-				{
+				"cool mint oreos": {
 					"name": "cool mint oreos",
 					"quantity": 1,
 					"complete": false
 				}
-			],
+			},
 			"members": [
 				"Albert Ke"	
 			]
 		},
-		{
-			"name": "Apartment218",
-			"description": "Filthy",
-			"contents": [
-				{
-					"name": "Vacuum",
+		"Cleaning": {
+			"name": "Cleaning",
+			"description": "D:",
+			"contents": {
+				"mop": {
+					"name": "mop",
 					"quantity": 1,
 					"complete": false
 				},
-				{
-					"name": "Clorox",
-					"quantity": 10,
-					"complete": false
-				},
-				{
-					"name": "Rags",
+				"soap": {
+					"name": "soap",
 					"quantity": 5,
 					"complete": false
-				},
-				{
-					"name": "Toilet Paper",
-					"quantity": 1,
-					"complete": false
 				}
-			],
+			},
 			"members": [
 				"Albert Ke",
 				"Brett Parsekian"
 			]
 		},
-		{
-			"name": "COGS120CSE170",
-			"description": "Intro to HCI",
-			"contents": [
-				{
-					"name": "Ideas",
+		"CSE170": {
+			"name": "CSE170",
+			"description": "So much work...",
+			"contents": {
+				"ideas": {
+					"name": "ideas",
 					"quantity": 15,
 					"complete": false
 				},
-				{
-					"name": "Subjects to observe",
-					"quantity": 3,
+				"applications": {
+					"name": "applications",
+					"quantity": 1,
 					"complete": false
 				},
-				{
-					"name": "Group Members",
-					"quantity": 3,
-					"complete": false
-				},
-				{
-					"name": "Paper Prototypes",
+				"prototypes": {
+					"name": "prototypes",
 					"quantity": 2,
 					"complete": false
 				},
-				{
-					"name": "Work Ethic",
-					"quantity": 1000,
+				"cool mint oreos": {
+					"name": "cool mint oreos",
+					"quantity": 1,
 					"complete": false
 				}
-			],
+			},
 			"members": [
 				"Albert Ke",
 				"Brett Parsekian",
 				"Meena Mostamandi"
 			]
 		}
-	]
+	}
 }

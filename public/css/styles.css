@@ -73,8 +73,27 @@ body {
 }
 
 .list-obj {
-		padding: 6% 5%;
+		padding: 2% 2%;
 		border-bottom: 1px dotted #cccccc;
+		font-size: 16px;
+}
+
+.description {
+		font-size: 12px;
+		color: #bbbbbb;
+}
+
+.members {
+		font-size: 12px;
+		font-style: italic;
+}
+
+.quantity {
+		top: 0;
+}
+
+.todo, .checked {
+		padding: 3% 3%;
 }
 
 /*.list-obj:nth-child(even) {
