@@ -32,21 +32,7 @@
 
 	<div class="top-offset"></div>
 
-	<div class="tab" id="lists-tab">
-		<ul class="list-area list-all" id="lists">
-			{{#each lists}}
-			<li class="list-obj row container" id="{{name}}">
-				<a href="lists.html" class="list-el">
-					<text class="col-xs-10">{{name}}</text>
-					<text class="description col-xs-10">{{description}}</text>
-					<text class="members col-xs-10">{{members}}</text>
-				</a>
-			</li>
-			<li>
-				<a href="/deleteList/{{name}}" class="delete-button"><span class="glyphicon glyphicon-minus"></span></a>
-			</li>
-			{{/each}}
-		</ul>
+	<div class="tab">
 	</div>
 
 	<div class="modal fade bs-modal-sm" tabindex="-1" role="dialog"

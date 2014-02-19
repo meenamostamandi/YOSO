@@ -96,14 +96,6 @@ body {
 		padding: 3% 3%;
 }
 
-/*.list-obj:nth-child(even) {
-		background-color: #DEF1DE;
-}
-
-.list-obj:nth-child(odd) {
-		background-color: #EFF8EF;
-}*/
-
 .list-obj:first-child {
 		//border-top: 1px dotted #cccccc;
 }

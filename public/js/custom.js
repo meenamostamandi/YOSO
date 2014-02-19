@@ -12,12 +12,36 @@ var currentTab = "lists";
 
 function initializePage() {
 	console.log("Javascript connected!");
+	displayAll();
 	$(".list-all .list-obj").click(displayList);
+	$(".tab-icon").click(changeTab);
+}
+
+function changeTab(e) {
+	var nextTab = $(this).attr("id");
+	nextTab = nextTab.substring(0, nextTab.length - 5);
+	//console.log(currentTab + ", " + nextTab);
+	if (nextTab != currentTab) {
+		//console.log("changing tabs");
+
+		$("#" + currentTab + "-icon").removeClass("selected");
+		$("#" + nextTab + "-icon").addClass("selected");
+
+		currentTab = nextTab;
+
+		if (currentTab == "lists") {
+			displayAll();
+		}
+		else if (currentTab == "friends") {
+			displayFriends();
+		}
+	}
 }
 
 function displayAll(e) {
 	//console.log("displayAll");
-	e.preventDefault();
+	if (e != undefined)
+		e.preventDefault();
 	
 	var getURL = "/list/all";
 	$.get(getURL, displayAllCallback);
@@ -76,6 +100,10 @@ function displayListCallback(result) {
 	$(".left-nav").click(displayAll);
 }
 
+function displayFriends(e) {
+	//e.preventDefault();
+	$('.tab').html("MOOSE");
+}
 function toggleCheck(e) {
 	e.preventDefault();
 	if ($(this).is(".todo")) {
