@@ -35,11 +35,8 @@
 	<div class="tab">
 	</div>
 
-	<div class="modal fade bs-modal-sm" tabindex="-1" role="dialog"
-	aria-labelledby="mySmallModalLabel" aria-hidden="true" id="myModal">
-  	<div class="modal-dialog modal-sm">
-    	<div class="modal-content">
-				<form id="addListForm" role="form" method="get" action="/addList">
+
+				<form id="addListForm" role="form" method="get" action="/list/edit/listAdd">
      	 		<label for="description">Name:</label>
 	     		<input type="text" class="form-control" id="name" placeholder="name" name="name">
 
@@ -51,15 +48,9 @@
 
 					<input type="submit" id="submitBtn" class="btn btn-default" value="Add the list"></input>
 				</form>
-    	</div>
-  	</div>
-	</div>
+    
 
-	<div class="modal fade bs-modal-sm" tabindex="-1" role="dialog"
-	aria-labelledby="mySmallModalLabel" aria-hidden="true" id="itemModal">
-  	<div class="modal-dialog modal-sm">
-    	<div class="modal-content">
-				<form id="addItemForm" role="form" method="get" action="/addItem">
+				<form id="addItemForm" role="form" method="get" action="/list/edit/itemAdd">
      	 		<label for="name">Name:</label>
 	     		<input type="text" class="form-control" id="name" placeholder="name" name="name">
 
@@ -67,11 +58,8 @@
 	     		<input type="text" class="form-control" id="quantity" placeholder="quantity" name="quantity">
 					<input type="submit" id="submitBtn" class="btn btn-default" value="Add the item"></input>
 				</form>
-    	</div>
-  	</div>
-	</div>
 
-	<footer class="tabs row">
+   <footer class="tabs row">
 		<div class="tab-icon col-xs-3 selected" id="lists-icon">
 			<span class="glyphicon glyphicon-list-alt"></span>
 			<div class="tab-icon-name">lists</div>

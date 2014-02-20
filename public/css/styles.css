@@ -92,7 +92,7 @@ body {
 		top: 0;
 }
 
-.todo, .checked {
+.checked-false, .checked-true{
 		padding: 3% 3%;
 }
 
@@ -118,7 +118,7 @@ body {
 		top: 8px;		
 }
 
-.checked, .checked * {
+.checked-true, .checked-true * {
 		background-color: black;
 		color: white;
 }

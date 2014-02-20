@@ -9,6 +9,7 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 var currentTab = "lists";
+var currentList = "none";
 
 function initializePage() {
 	console.log("Javascript connected!");
@@ -74,11 +75,12 @@ function displayList(e) {
 	e.preventDefault();
 
 	var getURL = "/list/contents/" + $(this).attr("id");
+	currentList = $(this).attr("id");
 	$.get(getURL, displayListCallback);
 }
 
 function displayListCallback(result) {
-	var itemHTML = '<li class="list-obj row container todo"> \
+	var itemHTML = '<li class="list-obj row container checked-{{complete}}" id=' + currentList + '{{name}}> \
 									  <a href="#"> \
 									    <text class="col-xs-6">{{name}}</text> \
 									    <text class="quantity col-xs-4">{{quantity}}</text> \
@@ -93,25 +95,56 @@ function displayListCallback(result) {
 		html += template(obj);
 	}
 	html += "	</ul>"
+	html += '<form id="addItemForm" role="form" method="get" action="/list/edit/itemAdd/' + currentList + '"> \
+    	 		 	<label for="name">Name:</label> \
+	     		 	<input type="text" class="form-control" id="name" placeholder="name" name="name"> \
+      			<label for="quantity">Quantity:</label> \
+	     			<input type="text" class="form-control" id="quantity" placeholder="quantity" name="quantity"> \
+						<input type="submit" id="submitBtn" class="btn btn-default" value="Add the item"></input> \
+					 </form>';
+
+	
 
 	$('.tab').html(html);
-	$(".todo").click(toggleCheck);
-	$(".checked").click(toggleCheck);
+	$(".checked-false").click(toggleCheck);
+	$(".checked-true").click(toggleCheck);
 	$(".left-nav").click(displayAll);
 }
 
 function displayFriends(e) {
 	//e.preventDefault();
-	$('.tab').html("MOOSE");
+
+	var getURL = "/friends/all"
+	$.get(getURL, displayFriendsCallback);
 }
+
+function displayFriendsCallback(result) {
+	var friendsHTML = '<ul class="list-area list-all" id="lists"> \
+								 			{{#each friends}} \
+												<li class="list-obj row container" id="{{first-name}}"> \
+													<a href="#" class="list-el"> \
+														<text class="col-xs-10">{{first-name}} {{last-name}}</text> \
+														<text class="description col-xs-10">{{photo}}</text> \
+														<text class="members col-xs-10">{{email}}</text> \
+													</a> \
+												</li> \
+											{{/each}} \
+										</ul>'
+
+	var template = Handlebars.compile(friendsHTML);
+	var html = template(result);
+
+	$('.tab').html(html);
+}
+
 function toggleCheck(e) {
 	e.preventDefault();
-	if ($(this).is(".todo")) {
-		$(this).removeClass("todo").addClass("checked");
+	if ($(this).is(".checked-false")) {
+		$(this).removeClass("checked-false").addClass("checked-true");
 		$(this).find(".glyphicon-unchecked").removeClass("glyphicon-unchecked").addClass("glyphicon-ok");
 	}
 	else {
-		$(this).removeClass("checked").addClass("todo");
+		$(this).removeClass("checked-true").addClass("checked-false");
 		$(this).find(".glyphicon-ok").removeClass("glyphicon-ok").addClass("glyphicon-unchecked");
 	}
 }

@@ -1,7 +1,7 @@
 var data = require('../data.json');
 
 exports.view = function(req, res){
-	console.log(data);
+	//console.log(data);
 	res.render('index', data);
 };
 
@@ -14,11 +14,11 @@ exports.addList = function(req, res){
 								"members": "Albert Ke"
 						};
 	data["lists"].push(newList);
-	res.redirect('/');
+	
 };
 
 exports.deleteList = function(req, res){
-	var list = req.params.name;
+	var list = req.params.list;
 	data["lists"] = data["lists"].filter(function(o){return o.name != list});
 	res.redirect('/');
 };

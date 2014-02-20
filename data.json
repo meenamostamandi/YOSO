@@ -1,7 +1,17 @@
 {
 	"friends": {
-		"Albert Ke": {},
-		"Brett Parsekian": {}
+		"Albert Ke": {
+			"first-name": "Albert",
+			"last-name": "Ke",
+			"photo": "Albert's Picture",
+			"email": "Albert's Email"
+		},
+		"Brett Parsekian": {
+			"first-name": "Brett",
+			"last-name": "Parsekian",
+			"photo": "Brett's Picture",
+			"email": "Brett's Email"	
+		}
 	},
 	"lists": {
 		"Groceries": {
@@ -11,22 +21,22 @@
 				"natto": {
 					"name": "natto",
 					"quantity": 3,
-					"complete": false
+					"complete": "false"
 				},
 				"cleaver": {
 					"name": "cleaver",
 					"quantity": 1,
-					"complete": false
+					"complete": "false"
 				},
 				"apples": {
 					"name": "apples",
 					"quantity": 5,
-					"complete": false
+					"complete": "false"
 				},
 				"cool mint oreos": {
 					"name": "cool mint oreos",
 					"quantity": 1,
-					"complete": false
+					"complete": "false"
 				}
 			},
 			"members": [
@@ -40,12 +50,12 @@
 				"mop": {
 					"name": "mop",
 					"quantity": 1,
-					"complete": false
+					"complete": "true"
 				},
 				"soap": {
 					"name": "soap",
 					"quantity": 5,
-					"complete": false
+					"complete": "false"
 				}
 			},
 			"members": [
