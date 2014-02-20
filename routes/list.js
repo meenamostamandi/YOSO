@@ -5,6 +5,7 @@ exports.listAll = function(req, res) {
 }
 
 exports.listContents = function(req, res) {
+	console.log(data);
 	res.json(data["lists"][req.params.list]["contents"]);
 }
 
@@ -18,6 +19,7 @@ exports.listAdd = function(req, res) {
 	newList = {
 								"name": name,
 								"description": description,
+								"contents": {},
 								"members": "Albert Ke"
 						};
 
@@ -26,26 +28,32 @@ exports.listAdd = function(req, res) {
 }
 
 exports.listDelete = function(req, res) {
-	res.json(data);
+	name = req.params.list;
+	delete data["lists"][name];
+	res.redirect('/');
 }
 
 exports.itemAdd = function(req, res) {
 	list = req.params.list;
-	console.log(list);
+	//console.log(list);
 	name = req.query.name;
 	quantity = req.query.quantity;
 	newItem = {
 								"name": name,
 								"quantity": quantity,
-								"complete": false
+								"complete": "false"
 				 		};
 
 	data["lists"][list]["contents"][name] = newItem;
-	console.log(data);
+	//console.log(data);
 	res.redirect('/');
 }
 
 exports.itemDelete = function(req, res) {
-	res.json(data);
+	console.log("itemDelete");
+	list = req.params.list;
+	item = req.params.item;
+	delete data["lists"][list]["contents"][item];
+	res.redirect('/');
 }
 

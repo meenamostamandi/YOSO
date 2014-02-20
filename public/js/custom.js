@@ -53,25 +53,36 @@ function displayAllCallback(result) {
 	var allHTML = '<ul class="list-area list-all" id="lists"> \
 								 	{{#each lists}} \
 										<li class="list-obj row container" id="{{name}}"> \
-											<a href="lists.html" class="list-el"> \
+											<a href="#" class="list-link" id="{{name}}">> \
 												<text class="col-xs-10">{{name}}</text> \
 												<text class="description col-xs-10">{{description}}</text> \
 												<text class="members col-xs-10">{{members}}</text> \
 											</a> \
-										</li> \
-										<li> \
-											<a href="/deleteList/{{name}}" class="delete-button"><span class="glyphicon glyphicon-minus"></span></a> \
+											<a href="/list/edit/listDelete/{{name}}" class="delete delete-{{name}}"> \
+												delete \
+											</a> \
 										</li> \
 									{{/each}} \
 								</ul>'
 	var template = Handlebars.compile(allHTML);
 	var html = template(result);
+	html += '<form id="addListForm" role="form" method="get" action="/list/edit/listAdd"> \
+     	 		<label for="description">Name:</label> \
+	     		<input type="text" class="form-control" id="name" placeholder="name" name="name"> \
+      		<label for="description">Description:</label> \
+	     		<input type="text" class="form-control" id="description" placeholder="Description" name="description"> \
+      		<label for="description">Members:</label> \
+	     		<input type="text" class="form-control" id="members" placeholder="members" name="members"> \
+					<input type="submit" id="submitBtn" class="btn btn-default" value="Add the list"></input> \
+				  </form>'
+
 
 	$('.tab').html(html);
-	$(".list-all .list-obj").click(displayList);
+	$(".list-all .list-obj .list-link").click(displayList);
 }
 
 function displayList(e) {
+	//console.log("displayList");
 	e.preventDefault();
 
 	var getURL = "/list/contents/" + $(this).attr("id");
@@ -81,12 +92,17 @@ function displayList(e) {
 
 function displayListCallback(result) {
 	var itemHTML = '<li class="list-obj row container checked-{{complete}}" id=' + currentList + '{{name}}> \
-									  <a href="#"> \
+									  <a href="#" class="checkbox col-xs-8"> \
 									    <text class="col-xs-6">{{name}}</text> \
 									    <text class="quantity col-xs-4">{{quantity}}</text> \
 									    <span class="glyphicon glyphicon-unchecked col-xs-2"></span> \
 								   	</a> \
-								  </li>'
+										</li> \
+										<li> \
+										<a href="/list/edit/itemDelete/' + currentList + '/{{name}}" class="delete-{{name}} col-xs-2"> \
+											remove \
+										</a> \
+										</li>'
 
 	var template = Handlebars.compile(itemHTML);
 	var html = '<ul class="list-area list-all" id="lists">';
@@ -106,9 +122,11 @@ function displayListCallback(result) {
 	
 
 	$('.tab').html(html);
+	//console.log("reached");
 	$(".checked-false").click(toggleCheck);
 	$(".checked-true").click(toggleCheck);
 	$(".left-nav").click(displayAll);
+	$(".checked-true .glyphicon").removeClass("glyphicon-unchecked").addClass("glyphicon-ok");
 }
 
 function displayFriends(e) {

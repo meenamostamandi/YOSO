@@ -83,6 +83,16 @@ body {
 		color: #bbbbbb;
 }
 
+.delete {
+		background-color: #d9534f;
+		color: white;
+		height: 50px;
+		right: 0;
+		position: fixed;
+		width: 50px;
+		z-index: 6;
+}
+
 .members {
 		font-size: 12px;
 		font-style: italic;

@@ -70,22 +70,22 @@
 				"ideas": {
 					"name": "ideas",
 					"quantity": 15,
-					"complete": false
+					"complete": "false"
 				},
 				"applications": {
 					"name": "applications",
 					"quantity": 1,
-					"complete": false
+					"complete": "false"
 				},
 				"prototypes": {
 					"name": "prototypes",
 					"quantity": 2,
-					"complete": false
+					"complete": "false"
 				},
 				"cool mint oreos": {
 					"name": "cool mint oreos",
 					"quantity": 1,
-					"complete": false
+					"complete": "false"
 				}
 			},
 			"members": [
