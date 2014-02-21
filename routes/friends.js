@@ -17,6 +17,8 @@ exports.friendAdd = function(req, res) {
 
 	data["friends"][firstname + ' ' + lastname] = newFriend;
 
+	data["tab"] = "friends";
+	//console.log(":(");
 	res.redirect('/');
 };
 
@@ -24,6 +26,8 @@ exports.friendDelete = function(req, res) {
 	firstname = req.params.firstname;
 	lastname = req.params.lastname;
 	delete data["friends"][firstname + ' ' + lastname];
+
+	data["tab"] = "friends";
 	res.redirect('/');
 };
 

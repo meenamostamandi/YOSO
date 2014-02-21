@@ -39,6 +39,8 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 app.get('/', index.view);
+app.get('/tab', index.tab);
+
 app.get('/lists/all', lists.listAll);
 app.get('/list/edit/listAdd', lists.listAdd);
 app.get('/list/edit/listDelete/:list', lists.listDelete);

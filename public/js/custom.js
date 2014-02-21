@@ -5,9 +5,18 @@ var currentList = "none";
 
 $(document).ready(function() {
 	console.log('moose');
-	display(currentTab);
+
+	var getURL = "/tab";
+	$.get(getURL, callback);	
 	$(".tab-icon").click(changeTab);
 })
+
+function callback(result) {
+	currentTab = result;
+	display(result);
+	$(".tab-icon").removeClass("selected");
+	$("#" + result + "-icon").addClass("selected");
+}
 
 function changeTab(e) {
 	var nextTab = $(this).attr("id");
@@ -22,12 +31,13 @@ function changeTab(e) {
 }
 
 function display(tab) {
-		switch (currentTab) {
+console.log("displaying " + tab);
+	switch (tab) {
 	  case "lists":
 			displayLists();
 	    break;
 		case "list":
-			displayList(currentList);
+			displayList();
 			break;
 		case "friends":
 			displayFriends();

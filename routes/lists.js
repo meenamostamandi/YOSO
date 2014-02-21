@@ -42,6 +42,8 @@ exports.itemAdd = function(req, res) {
 
 	data["lists"][list]["contents"][name] = newItem;
 	//console.log(data);
+
+	data["tab"] = "list";
 	res.redirect('/');
 };
 
@@ -50,6 +52,8 @@ exports.itemDelete = function(req, res) {
 	list = req.params.list;
 	item = req.params.item;
 	delete data["lists"][list]["contents"][item];
+
+	data["tab"] = "list";
 	res.redirect('/');
 };
 

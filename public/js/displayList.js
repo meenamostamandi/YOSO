@@ -1,7 +1,10 @@
 function displayList(e) {
-
-	var getURL = "/list/contents/" + $(this).attr("id");
-	currentList = $(this).attr("id");
+console.log(currentList);
+	if ($(this).attr("id") != undefined) {
+		currentList = $(this).attr("id");
+		console.log("setting currentList to " + currentList);
+	}
+	var getURL = "/list/contents/" + currentList;
 	$.get(getURL, displayListCallback);
 }
 
