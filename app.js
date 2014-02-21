@@ -8,6 +8,8 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars');
 var mongoose = require('mongoose');
+// var passport = require('passport')
+//   , LocalStrategy = require('passport-local').Strategy;
 
 var index = require('./routes/index');
 var list = require('./routes/list');
@@ -21,6 +23,24 @@ var local_database_name = 'yoso';
 var local_database_uri  = 'mongodb://localhost/' + local_database_name
 var database_uri = process.env.MONGOLAB_URI || local_database_uri
 mongoose.connect(database_uri);
+
+//passport login
+// passport.use(new LocalStrategy(
+//   usernameField: 'email',
+//   passwordField: 'passwd'
+//   function(username, password, done) {
+//     User.findOne({ username: username }, function(err, user) {
+//       if (err) { return done(err); }
+//       if (!user) {
+//         return done(null, false, { message: 'Incorrect username.' });
+//       }
+//       if (!user.validPassword(password)) {
+//         return done(null, false, { message: 'Incorrect password.' });
+//       }
+//       return done(null, user);
+//     });
+//   }
+// ));
 
 var app = express();
 
@@ -55,8 +75,15 @@ app.get('/list/edit/itemAdd/:list', list.itemAdd);
 app.get('/list/edit/itemDelete/:list/:item', list.itemDelete);
 app.get('/list/info/:list', list.listInfo);
 
-
+//app.get('/friends/all', friends2.displayFriends);
 app.get('/friends/all', friends.listAll);
+app.get('/friends/edit/friendDelete/:friend', friends.friendDelete);
+
+// app.post('/login',
+//   passport.authenticate('local', { successRedirect: '/',
+//                                    failureRedirect: '/login',
+//                                    failureFlash: true })
+// );
 
 // Example route
 // app.get('/users', user.list);

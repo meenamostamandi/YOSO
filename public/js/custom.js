@@ -34,6 +34,7 @@ function changeTab(e) {
 			displayAll();
 		}
 		else if (currentTab == "friends") {
+			console.log("tabs");
 			displayFriends();
 		}
 	}
@@ -131,10 +132,12 @@ function displayListCallback(result) {
 
 function displayFriends(e) {
 	//e.preventDefault();
+	console.log("displayFriends");
+	var getURL = "/friends/all";
 
-	var getURL = "/friends/all"
 	$.get(getURL, displayFriendsCallback);
 }
+
 
 function displayFriendsCallback(result) {
 	var friendsHTML = '<ul class="list-area list-all" id="lists"> \
@@ -144,6 +147,9 @@ function displayFriendsCallback(result) {
 														<text class="col-xs-10">{{first-name}} {{last-name}}</text> \
 														<text class="description col-xs-10">{{photo}}</text> \
 														<text class="members col-xs-10">{{email}}</text> \
+													</a> \
+													<a href="/friends/edit/friendDelete/{{first-name}}{{last-name}}" class="delete delete-{{name}}"> \
+														delete \
 													</a> \
 												</li> \
 											{{/each}} \

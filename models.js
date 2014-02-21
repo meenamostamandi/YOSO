@@ -1,30 +1,36 @@
 var Mongoose = require('mongoose');
 
-
-var ProjectSchema = new Mongoose.Schema({
-  "title": String,
-  "date": Date,
-  "summary": String,
-  "image": 
-});
-
-var userSchema = new mongoose.Schema({
+var userSchema = new Mongoose.Schema({
     name: {
     	first: String,
     	last: String
     },
     email: String,
     password: String,
-    friends: []
+    friends: [],
+    lists: [listSchema]
 });
 userSchema.virtual('name.full').get(function() {
 	return this.name.first + ' ' + this.name.last;
 });
 
-personSchema.virtual('name.full').set(function (name) {
+userSchema.virtual('name.full').set(function (name) {
   var split = name.split(' ');
   this.name.first = split[0];
   this.name.last = split[1];
 });
 
 exports.User = Mongoose.model('User', userSchema);
+
+
+var listSchema = new Mongoose.Schema({
+    name: String,
+    description: String,
+    contents: [contentSchema]
+});
+
+var contentSchema = new Mongoose.Schema({
+    name: String,
+    quantity: String,
+    complete: Boolean
+});
