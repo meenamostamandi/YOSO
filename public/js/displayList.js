@@ -1,9 +1,9 @@
 function displayList(e) {
 console.log(currentList);
-	if ($(this).attr("id") != undefined) {
+	//if ($(this).attr("id") != undefined) {
 		currentList = $(this).attr("id");
-		console.log("setting currentList to " + currentList);
-	}
+//		console.log("setting currentList to " + currentList);
+//	}
 	var getURL = "/list/contents/" + currentList;
 	$.get(getURL, displayListCallback);
 }
@@ -23,9 +23,9 @@ function displayListCallback(result) {
  					   	'		 	<label for="name">Name:</label>	' +
 					    '		 	<input type="text" class="form-control" id="name" placeholder="name" name="name">	' +
   				    '			<label for="quantity">Quantity:</label>	' +
-					    '			<input type="text" class="form-control" id="quantity" placeholder="quantity" name="quantity">	; ' +
+					    '			<input type="text" class="form-control" id="quantity" placeholder="quantity" name="quantity"> ' +
 							'			</br>	' +
-							'			<input type="submit" id="submitBtn" class="btn btn-success" value="Add the item"></input>	;	' +
+							'			<input type="submit" id="submitBtn" class="btn btn-success" value="Add the item"></input>	' +
 							'	 	</form>	' +
 							'	</div>	' +
 							'	<div class="add">	' +

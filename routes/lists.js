@@ -11,6 +11,8 @@ exports.listAdd = function(req, res) {
 						};
 
 	data["lists"][name] = newList;
+
+	data["tab"] = "lists";
 	res.redirect('/');
 };
 
@@ -26,6 +28,8 @@ exports.listContents = function(req, res) {
 exports.listDelete = function(req, res) {
 	name = req.params.list;
 	delete data["lists"][name];
+
+	data["tab"] = "lists";
 	res.redirect('/');
 };
 
@@ -43,7 +47,7 @@ exports.itemAdd = function(req, res) {
 	data["lists"][list]["contents"][name] = newItem;
 	//console.log(data);
 
-	data["tab"] = "list";
+	data["tab"] = "lists";
 	res.redirect('/');
 };
 
@@ -53,7 +57,7 @@ exports.itemDelete = function(req, res) {
 	item = req.params.item;
 	delete data["lists"][list]["contents"][item];
 
-	data["tab"] = "list";
+	data["tab"] = "lists";
 	res.redirect('/');
 };
 
