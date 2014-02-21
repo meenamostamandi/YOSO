@@ -17,25 +17,19 @@
 	<link href="css/bootstrap-theme.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
 </head>
-
 <body>
 	<header class="menu row container">
-		<a href="#" class="left-nav col-xs-2">
-			<span class="glyphicon glyphicon-chevron-left"></span>
-		</a>
-		<h1 class="title col-xs-7">yoso</h1>
-		<a href="#" class="edit col-xs-1">edit</a>
-		<a href="#" class="right-nav col-xs-1">
-			<span class="glyphicon glyphicon-plus"></span>
-		</a>
+		<div class="menu-left col-xs-2"></div>
+		<div class="menu-center col-xs-8">
+			<h1 class="title">loading...</h1>	
+		</div>
+		<div href="#" class="menu-right col-xs-2"></div>
 	</header>
 
-	<div class="top-offset"></div>
-
-	<div class="tab">
+	<div class="main">
 	</div>
 
-   <footer class="tabs row">
+	<footer class="tabs row">
 		<div class="tab-icon col-xs-3 selected" id="lists-icon">
 			<span class="glyphicon glyphicon-list-alt"></span>
 			<div class="tab-icon-name">lists</div>
@@ -48,15 +42,22 @@
 			<span class="glyphicon glyphicon-map-marker"></span>
 			<div class="tab-icon-name">check in</div>
 		</div>
-		<div class="tab-icon col-xs-3" id="trending-icon">
-			<span class="glyphicon glyphicon-heart"></span>
-			<div class="tab-icon-name">trending</div>
+		<div class="tab-icon col-xs-3" id="contact-icon">
+			<span class="glyphicon glyphicon-send"></span>
+			<div class="tab-icon-name">contact</div>
 		</div>
 	</footer>
 
-  <script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
   <script src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="http://cloud.github.com/downloads/wycats/handlebars.js/handlebars-1.0.rc.1.min.js"></script>
+  <script src="js/displayList.js"></script>
+  <script src="js/displayLists.js"></script>
+  <script src="js/displayFriends.js"></script>
+  <script src="js/displayCheckin.js"></script>
+  <script src="js/displayContact.js"></script>
   <script src="js/custom.js"></script>
 </body>
 </html>
+

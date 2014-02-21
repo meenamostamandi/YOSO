@@ -29,7 +29,6 @@
 .menu-left {
 		vertical-align: middle;
 		margin: 7% 0;
-		font-size: 16px;
 }
 
 .menu-right {
@@ -56,7 +55,7 @@
 		z-index: 8;
 }
 
-.delete, .delete a {
+.delete {
 		color: white;
 		position: relative;
 		top: 30%;
@@ -103,7 +102,7 @@ input {
 }
 
 .item-element {
-	padding: 0;
+	padding: 2% 0;
 }
 
 .status {
@@ -144,11 +143,6 @@ input {
 		color: rgba(92, 184, 92, 1);
 		font-size: 18px;
 		display: block;
-		padding: 2% 0;
-}
-
-.item-element .delete {
-		top: 12%;
 }
 
 .list-description {

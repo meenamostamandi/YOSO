@@ -9,8 +9,9 @@ var path = require('path');
 var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index');
-var list = require('./routes/list');
+var lists = require('./routes/lists');
 var friends = require('./routes/friends');
+
 // Example route
 // var user = require('./routes/user');
 
@@ -38,17 +39,17 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 app.get('/', index.view);
+app.get('/lists/all', lists.listAll);
+app.get('/list/edit/listAdd', lists.listAdd);
+app.get('/list/edit/listDelete/:list', lists.listDelete);
 
-app.get('/list/all', list.listAll);
-app.get('/list/contents/:list', list.listContents);
-app.get('/list/edit/listAdd', list.listAdd);
-app.get('/list/edit/listDelete/:list', list.listDelete);
-app.get('/list/edit/itemAdd/:list', list.itemAdd);
-app.get('/list/edit/itemDelete/:list/:item', list.itemDelete);
-app.get('/list/info/:list', list.listInfo);
-
+app.get('/list/contents/:list', lists.listContents);
+app.get('/list/edit/itemAdd/:list', lists.itemAdd);
+app.get('/list/edit/itemDelete/:list/:item', lists.itemDelete);
 
 app.get('/friends/all', friends.listAll);
+app.get('/friends/edit/friendAdd', friends.friendAdd);
+app.get('/friends/edit/friendDelete/:firstname/:lastname', friends.friendDelete);
 
 // Example route
 // app.get('/users', user.list);

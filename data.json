@@ -21,22 +21,22 @@
 				"natto": {
 					"name": "natto",
 					"quantity": 3,
-					"complete": "false"
+					"complete": "todo"
 				},
 				"cleaver": {
 					"name": "cleaver",
 					"quantity": 1,
-					"complete": "false"
+					"complete": "todo"
 				},
 				"apples": {
 					"name": "apples",
 					"quantity": 5,
-					"complete": "false"
+					"complete": "todo"
 				},
-				"cool mint oreos": {
-					"name": "cool mint oreos",
+				"oreos": {
+					"name": "oreos",
 					"quantity": 1,
-					"complete": "false"
+					"complete": "todo"
 				}
 			},
 			"members": [
@@ -50,12 +50,12 @@
 				"mop": {
 					"name": "mop",
 					"quantity": 1,
-					"complete": "true"
+					"complete": "done"
 				},
 				"soap": {
 					"name": "soap",
 					"quantity": 5,
-					"complete": "false"
+					"complete": "todo"
 				}
 			},
 			"members": [
@@ -70,29 +70,29 @@
 				"ideas": {
 					"name": "ideas",
 					"quantity": 15,
-					"complete": "false"
+					"complete": "todo"
 				},
 				"applications": {
 					"name": "applications",
 					"quantity": 1,
-					"complete": "false"
+					"complete": "todo"
 				},
 				"prototypes": {
 					"name": "prototypes",
 					"quantity": 2,
-					"complete": "false"
+					"complete": "todo"
 				},
 				"cool mint oreos": {
 					"name": "cool mint oreos",
 					"quantity": 1,
-					"complete": "false"
+					"complete": "todo"
 				}
 			},
 			"members": [
-				"Albert Ke",
 				"Brett Parsekian",
 				"Meena Mostamandi"
 			]
 		}
 	}
 }
+
