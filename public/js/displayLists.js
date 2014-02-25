@@ -48,6 +48,10 @@ function displayListsCallback(result) {
 }
 
 function displayListsJQuery() {	
+	$('.list-element').click(function(){
+		$(this).toggleClass('selected');
+	});
+	
 	var headerHeight = $('header').height();
 	var footerHeight = $('footer').height();
 

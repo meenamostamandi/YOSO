@@ -102,4 +102,5 @@ function displayListJQuery() {
 		}
 	});
 	$('.menu-left').click(displayLists);
+
 }
